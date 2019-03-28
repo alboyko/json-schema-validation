@@ -1,0 +1,6 @@
+json:
+  schemas:
+    available:
+      - schema/composite-item-schema.json
+    default:
+      schema/composite-item-schema.json

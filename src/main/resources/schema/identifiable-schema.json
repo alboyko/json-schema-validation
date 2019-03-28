@@ -1,0 +1,24 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "http://example.com/indentifiable-schema.json",
+  "type": "object",
+  "title": "The Identifiable Schema",
+  "required": [
+    "uri"
+  ],
+  "properties": {
+    "uri": {
+      "$id": "#/properties/uri",
+      "type": "string",
+      "title": "The Uri Schema",
+      "default": "",
+      "examples": [
+        "/item/123abc"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}
+
+

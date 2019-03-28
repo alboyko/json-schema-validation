@@ -1,0 +1,9 @@
+{
+  "uri": "/entity/1234abc",
+  "guid": "1234abc",
+  "navigable": true,
+  "hierarchy": [
+    "/level1/sublevel1/abc",
+    "/level2/sublevel1/def"
+  ]
+}

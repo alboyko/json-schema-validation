@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "http://example.com/composite-item-schema.json",
+  "definitions": {
+    "identifiable": {
+      "$id": "http://example.com/indentifiable-schema.json",
+      "type": "object",
+      "title": "The Identifiable Schema",
+      "required": [
+        "uri"
+      ],
+      "properties": {
+        "uri": {
+          "$id": "#/properties/uri",
+          "type": "string",
+          "title": "The Uri Schema",
+          "default": "",
+          "examples": [
+            "/item/123abc"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "navigable": {
+      "$id": "http://example.com/navigable-schema.json",
+      "type": "object",
+      "title": "The Navigable Schema",
+      "required": [
+        "navigable",
+        "hierarchy"
+      ],
+      "properties": {
+        "navigable": {
+          "$id": "#/properties/navigable",
+          "type": "boolean",
+          "title": "The Navigable Schema",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "hierarchy": {
+          "$id": "#/properties/hierarchy",
+          "type": "array",
+          "title": "The Hierarchy Schema",
+          "items": {
+            "$id": "#/properties/hierarchy/items",
+            "type": "string",
+            "title": "The Items Schema",
+            "default": "",
+            "examples": [
+              "/level1/sublevel1/abc",
+              "/level2/sublevel1/def"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  },
+
+
+  "allOf": [
+    { "$ref": "#/definitions/identifiable" },
+    { "$ref": "#/definitions/navigable" }
+  ]
+}
