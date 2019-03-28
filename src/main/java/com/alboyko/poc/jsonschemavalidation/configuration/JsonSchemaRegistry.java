@@ -40,7 +40,7 @@ class JsonSchemaRegistry {
         try {
             JSONObject json = JsonResourceUtils.getResourceAsJsonObject(path);
             Schema schema = SchemaLoader.load(json);
-            schemas.put(schema.getId(), schema);
+            schemas.put(getSchemaId(path), schema);
         } catch (IOException e) {
             log.error(String.format("Cannot register schema %s", path), e);
             return false;
